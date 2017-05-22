@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.js"></script>
+    <style>
+        a{
+            border: 0;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        h1,h2,h3,h4{
+            font-family: Microsoft YaHei;
+        }
+        body{
+            background: #efefef;
+            font-size: 14px;
+            font-family: Microsoft YaHei;
+        }
+        a{
+            color: #666;
+            text-decoration: none;
+        }
+        li{
+            list-style: none;
+        }
+        .width-1000{
+            width: 1000px;
+            margin: 0 auto;
+        }
+        .bg-white{
+            background: #fff;
+        }
+        img{
+            vertical-align: middle;
+        }
+        #header{
+            margin-bottom: 4px;
+        }
+        #header img{
+            border-radius: 10px;
+            width: 1000px;
+            height: 145px;
+
+        }
+        #nav{
+
+        }
+        #nav ul{
+            box-shadow: 4px 4px 4px #e3e3e3;
+            border-radius: 10px;
+            width: 1001px;
+            height: 51px;
+            background: #66cccc;
+        }
+        #nav li{
+            margin-right:3px;
+            border-radius: 10px;
+            text-align: center;
+            float: left;
+        }
+        #nav ul li:nth-child(1){
+
+            background: #f15694;
+
+        }
+        #nav ul li:nth-child(7){
+            margin-right: 0;
+        }
+        #nav li #navEnd{
+            width: 143px;
+        }
+        #nav li:hover{
+            background: #f15694;
+        }
+        #nav li a{
+            width: 140px;
+            display: block;
+            color: #ffffff;
+            font-size:16px;
+            line-height:50px;
+        }
+
+        #banner{
+            margin-top: 10px;
+            height: 300px;
+
+        }
+        #banner .banner-left{
+            margin-left: 4px;
+            float: left;
+            width: 618px;
+            height: 100%;
+        }
+        #banner .banner-content{
+            float: left;
+            /*height: 300px;*/
+            /*width: 480px;*/
+
+        }
+        #banner .banner-content ul {
+            position: relative;
+            height: 300px;
+            width: 480px;
+        }
+        #banner .banner-content ul li{
+            position: absolute;
+            top: 0;
+            left:0;
+            opacity: 1;
+        }
+
+
+        #banner .switch-image-box{
+
+            overflow: hidden;
+            position: relative;
+            padding-left: 5px;
+            float: left;
+
+        }
+        #banner .switch-image-box .select-box{
+            position: absolute;
+            left: -4px;
+            top:0;
+        }
+        #banner .switch-image-box li{
+            padding: 5px;
+        }
+        #banner .switch-image-box li img{
+            width: 100px;
+            height: 50px;
+        }
+        #banner .banner-right{
+            width: 378px;
+            height: 270px;
+            margin-top: 14px;
+            float: right;
+            background: url("images/everydaybg.jpg") no-repeat center;
+
+        }
+        #banner .banner-right .banner-right-text{
+
+            width: 226px;
+            height: 90px;
+            float: right;
+            margin-top: 102px;
+            color: #f7b0b0;
+            line-height:26px;
+            font-size: 16px;
+            padding-right: 24px;
+
+        }
+
+
+        #blog-module{
+            margin-top: 22px;
+        }
+        #blog-module:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        #blog-module h2{
+            margin-left: 2px;
+            width: 220px;
+            color: #ffffff;
+            padding-left: 10px;
+            font-size: 16px;
+            line-height: 30px;
+            background: #4b5153;
+            box-shadow: 4px 4px 4px #949091;
+        }
+        #blog-module h2 span{
+            font-size: 14px;
+            color: #38c7e2;
+            padding-left: 8px;
+        }
+        #blog-module .blog-template{
+            float: left;
+        }
+        #blog-module ul{
+            margin-top: 20px;
+        }
+        #blog-module .blog-template ul li{
+            margin-right: 20px;
+            float: left;
+            background: #ffffff;
+            width: 210px;
+        }
+        #blog-module .blog-template ul li:hover{
+            box-shadow: 0 4px 4px #666;
+        }
+        #blog-module .blog-template ul li img{
+            width: 210px;
+        }
+        #blog-module ul li h4{
+
+            padding: 0 10px;
+            height: 30px;
+            line-height: 30px;
+
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+
+            font-size: 16px;
+            font-weight: 500;
+            color: #000;
+            text-align: center;
+        }
+        #blog-module ul li p{
+            font-size: 14px;
+            overflow: hidden;
+            height: 54px;
+            color: #b2a8bc;
+            padding: 4px 10px;
+        }
+        #blog-module .web-video{
+            padding-left: 24px;
+            float: left;
+
+        }
+        #blog-module .web-video a{
+            display: block;
+            width: 264px;
+            height: 32px;
+            padding-left:6px;
+            line-height: 32px;
+            color: #666666;
+            box-sizing: border-box;
+            border-bottom: 1px dotted #d6d3d3;
+
+
+        }
+        #blog-module .web-video a:hover{
+            background: #6eb88c;
+            color: #fff;
+            padding-left: 16px;
+        }
+
+
+        #main-content{
+            margin-top: 28px;
+        }
+        #main-content:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        #main-content h3{
+            font-size: 16px;
+            height: 24px;
+            line-height: 24px;
+            font-weight: 400;
+            padding-left: 10px;
+            border-left: 2px solid #3472ef;
+        }
+        #main-content .main-content-box{
+            float: left;
+
+        }
+
+
+        #main-content  .main-content-slide{
+            float: left;
+        }
+        #main-content  .main-content-box ul.message-list{
+            margin-top: 20px;
+        }
+        #main-content ul.message-list li{
+            background: #ffffff;
+            width: 690px;
+            height: 194px;
+            margin-top: 22px;
+        }
+        #main-content li .item-header{
+            float: left;
+            margin-top: 26px;
+            margin-left: 12px;
+            background: red;
+        }
+        #main-content li .item-header img{
+            height: 142px;
+            width: 216px;
+        }
+        #main-content li .item-body{
+            float: left;
+            height: 142px;
+            width: 436px;
+            margin-top:26px;
+            margin-left:16px;
+            overflow: hidden;
+        }
+        #main-content .item-body h4{
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 22px;
+        }
+        #main-content .item-body p{
+            margin-top: 16px;
+        }
+        #main-content .main-content-slide{
+            margin-left: 20px;
+            width: 290px;
+        }
+        #main-content .search{
+            margin-top: 22px;
+            background: #ffffff;
+            height: 72px;
+            box-sizing: border-box;
+            padding-top: 24px;
+            padding-left: 36px;
+        }
+        #main-content .search input{
+            width: 200px;
+            height: 28px;
+            padding-left: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        #main-content .slide-nav{
+            margin-top: 20px;
+            background: #ffffff;
+            height: 144px;
+        }
+        #main-content .slide-nav li{
+            float: left;
+            margin-left: 20px;
+            margin-top: 16px;
+            border-radius: 4px;
+        }
+        #main-content .slide-nav li:nth-child(1){
+            background: #666;
+
+        }
+        #main-content .slide-nav li:nth-child(2){
+            background: #00cccc;
+
+        }
+        #main-content .slide-nav li:nth-child(3){
+            background: #cc9966;
+
+        }
+        #main-content .slide-nav li:nth-child(3){
+            background: #cd9b6a;
+
+        }
+        #main-content .slide-nav li:nth-child(4){
+            background: #6633cc;
+
+        }
+
+        #main-content .slide-nav li a{
+            display: block;
+            width: 108px;
+            height: 48px;
+            line-height: 48px;
+            text-align: center;
+            font-size: 16px;
+            color: #fff;
+        }
+        #main-content .slide-nav li a:hover{
+            transition: 2s all;
+           transform: rotate(720deg);
+            background: rgba(236,236,236,0.3);
+
+
+        }
+        #main-content .contact{
+
+            margin-top: 20px;
+            background: #ffffff;
+            height: 230px;
+        }
+        #main-content .contact ul li{
+            margin-top: 20px;
+        }
+        #main-content .contact ul li:after{
+            content: '';
+            clear: both;
+            display: block;
+        }
+        #main-content .contact ul li p{
+            line-height: 24px;
+            padding-left: 28px;
+            float: left;
+        }
+        #main-content .contact ul li a{
+            margin-left: 28px;
+            float: left;
+        }
+        #footer{
+            text-align: center;
+           height: 40px;
+            background: #66cccc;
+            margin-top: 20px;
+        }
+        #footer p{
+            line-height: 40px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<!--http://www.duanliang920.com/-->
+
+<!--header开始-->
+<div id="header" class="width-1000">
+    <img src="images/header.png" alt="">
+</div>
+<!--header结束-->
+<!--nav开始-->
+<div id="nav" class="width-1000">
+    <ul >
+        <li><a href="#">首页</a></li>
+        <li><a href="#">网站模版</a></li>
+        <li><a href="#">视频教程</a></li>
+        <li><a href="#">学无止境</a></li>
+        <li><a href="#">个人日记</a></li>
+        <li><a href="#">关于段亮</a></li>
+        <li><a href="#" id="navEnd">留言板</a></li>
+    </ul>
+
+</div>
+<!--nav结束-->
+<!--banner开始-->
+<div id="banner" class="width-1000">
+    <div class="banner-left">
+        <div class="banner-content">
+            <ul>
+
+                <li><img src="images/s-banner2.jpg" alt=""></li>
+                <li><img src="images/s-banner3.jpg" alt=""></li>
+                <li><img src="images/s-banner4.jpg" alt=""></li>
+                <li><img src="images/s-banner5.jpg" alt=""></li>
+                <li><img src="images/s-banner1.jpg" alt=""></li>
+            </ul>
+
+
+        </div>
+        <div class="switch-image-box">
+            <div class="select-box">
+                <img src="images/kuang.png" alt="">
+            </div>
+            <ul>
+                <li><img src="images/s-banner1.jpg" alt=""></li>
+                <li><img src="images/s-banner2.jpg" alt=""></li>
+                <li><img src="images/s-banner3.jpg" alt=""></li>
+                <li><img src="images/s-banner4.jpg" alt=""></li>
+                <li><img src="images/s-banner5.jpg" alt=""></li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="banner-right">
+        <p class="banner-right-text">毕竟不是作家，写不出那么好的文章。--因为没有丰富阅历和经验！</p>
+    </div>
+
+</div>
+
+<!--banner结束-->
+<!--blog-module开始-->
+<div id="blog-module" class="width-1000">
+    <div class="blog-template">
+        <h2>个人博客模板<span>Blog Template</span></h2>
+        <ul>
+            <li>
+                <a href="#"><img src="images/tem1.png" alt="">
+                    <h4>关于段亮个人博客-3.0正式版本 </h4>
+                    <p>前言: 今天,终于能如愿以偿的把博客进行更新改版啦!之前一直有想法把博客进行重新构建,由于种种原因,就一直拖延着。 或许这也跟自己的懒惰,有一定程度的关系吧! 好啦,废话不多说,说说今天的正题吧!以及为什么要重新对博客进行优化构建呢? 原因如下: 1、代码</p>
+                </a>
+            </li>
+            <li>
+                <a href="#"><img src="images/tem2.png" alt="">
+                    <h4>一款html5的wordpress博客模板 </h4>
+                    <p>这款Wordpress模板整体颜色布局以浅蓝色为主，给人一种神秘感和亲切感。虽然从布局上来看比较简单，但采用了一些CSS3特效，确使网站整体提升了一个档次。 首页板块： 留言板块： 点击下载</p>
+                </a>
+            </li>
+            <li>
+                <a href="#"><img src="images/tem3.png" alt="">
+                    <h4>简单大气机械类企业网站模板</h4>
+                    <p>这套 机械设备企业网站模板 ,整体采用蓝色风格,给人一种亲切的感觉。 让我们一起来看看这套 机械设备企业网站模板, 有哪些模块: 1、首页 2、关于我们 3、最新资讯4、产品展示5、售后服务6、荣誉资质 7、在线预订 8、联系我们,这几个模块组成。 网站页面截图-</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="web-video">
+        <h2>网页制作视频<span>Web Video</span></h2>
+
+        <ul>
+            <li><a href="#">第一课:网页入门</a></li>
+            <li><a href="#">第二课:常用的HTML标签</a></li>
+            <li><a href="#">第三课:HTML表单</a></li>
+            <li><a href="#">第四课:CSS入门</a></li>
+            <li><a href="#">第五课:常用的CSS样式</a></li>
+            <li><a href="#">第六课:CSS浮动</a></li>
+            <li><a href="#">第七课:HTML表格</a></li>
+        </ul>
+    </div>
+</div>
+<!--blog-module结束-->
+<!--main-content开始-->
+<div id="main-content" class="width-1000">
+    <div class="main-content-box">
+        <h3>文章推荐</h3>
+        <ul class="message-list">
+            <li>
+                <a href="#">
+
+                    <div class="item-header">
+                        <img src="images/msgheader.png" alt="">
+                    </div>
+                    <div class="item-body">
+                        <h4>如何建立个人微博</h4>
+                        <em>发布时间:2017/3/19 18:54/</em>
+                        <span>分类：学无止境</span>
+                        <p>想必很多人都想建立一个，
+                            属于自己的个人博客，把自己的一些学习的经验和经历，
+                            通过互联网的形式来分享给别人。通过分享与网友进行互动，
+                            让更多的人了解和认识你，并且树立自己在互联网上的个人品牌，
+                            其实这就是一种“自媒体”。那么我们怎么去建立自己独立...</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+
+                    <div class="item-header">
+                        <img src="images/msgheader.png" alt="">
+                    </div>
+                    <div class="item-body">
+                        <h4>如何建立个人微博</h4>
+                        <em>发布时间:2017/3/19 18:54/</em>
+                        <span>分类：学无止境</span>
+                        <p>想必很多人都想建立一个，
+                            属于自己的个人博客，把自己的一些学习的经验和经历，
+                            通过互联网的形式来分享给别人。通过分享与网友进行互动，
+                            让更多的人了解和认识你，并且树立自己在互联网上的个人品牌，
+                            其实这就是一种“自媒体”。那么我们怎么去建立自己独立...</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="main-content-slide">
+        <h3>站内搜索</h3>
+        <div class="search">
+            <input type="text" placeholder="请输入你需要的内容">
+        </div>
+        <div class="slide-nav">
+            <ul>
+                <li><a href="#">关于我</a></li>
+                <li><a href="#">视频教程</a></li>
+                <li><a href="#">SEO优化</a></li>
+                <li><a href="#">留言板</a></li>
+            </ul>
+        </div>
+        <div class="contact">
+            <h3>关注博客</h3>
+            <ul>
+                <li><p>邮箱订阅:</p><a href="#"><img src="images/email.png" alt=""></a></li>
+                <li><p>联系段亮:</p><a href="#"><img src="images/qq.png" alt=""></a></li>
+                <li><p>加入群聊:</p><a href="#"><img src="images/qqqun.png" alt=""></a></li>
+                <li><p>关注微博:</p><a href="#"><img src="images/guanzhu.png" alt=""></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--main-content结束-->
+<div id="footer" class="width-1000">
+<p>Design by：段亮 备案号：湘ICP备14011335号-2</p>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        var bannerContent=$(".banner-content ul li");
+        var index=0;
+        var selectImage=$("#banner,.select-box");
+        var timer=setInterval(function () {
+            bannerContent.eq(index).fadeIn().siblings().fadeOut('fast');
+            index++;
+            if(index==bannerContent.length){
+                index=0;
+            }
+
+            selectImage.animate({top:(index*60)+"px"},400);
+
+        },2000);
+    });
+</script>
+</body>
+</html>

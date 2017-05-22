@@ -1,0 +1,45 @@
+.inner{
+    width: 1210px;
+    height: 452px;
+    margin: 16px auto;
+}
+.aside{
+    float: right;
+    height: 452px;
+    width: 250px;
+}
+.lun{
+    padding: 0;
+    position: relative;
+    margin-right: 12px;
+    float: right;
+    height: 452px;
+    width: 730px;
+}
+.lun-list{
+    position: absolute;
+    left: 324px;
+    bottom: 6px;
+}
+.lun-list ul{
+}
+.lun-list li{
+    text-indent: 7px;
+    font: 400 10px/20px 微软雅黑;
+    color: #fffff2;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #3e3e3e;
+    border-radius: 10px;
+}
+.lun-list .item{
+    background-color: #b61b1f;
+}
+.aside{
+    background: url("../img/aside.gif");
+    height: 450px;
+    width: 250px;
+
+  border-right:  1px solid #e4e4e4;
+}
